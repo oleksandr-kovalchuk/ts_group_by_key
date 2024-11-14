@@ -4,7 +4,7 @@ type GroupsMap<T> = {
 
 export function groupByKey<T>(items: T[], key: keyof T): GroupsMap<T> {
   return items.reduce((groupedItems: GroupsMap<T>, item: T) => {
-    const keyValue = item[key] as string;
+    const keyValue = String(item[key]);
 
     if (!groupedItems[keyValue]) {
       groupedItems[keyValue] = [];
